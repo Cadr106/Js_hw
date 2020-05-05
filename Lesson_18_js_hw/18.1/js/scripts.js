@@ -25,10 +25,10 @@ console.log(' ');
 console.log('Задание 3');
 
 let arr1 = [];
-    i = 23;
+
+i = 23;
 
 while (i < 58) {
-    console.log(arr1[i]);
     arr1.push(i);
     i++;    
 }
@@ -43,9 +43,7 @@ for (i = 23; i < 58; i++) {
     arr2.push(i);
     sum += i;
 }
-
 result = sum;
-
 console.log(arr2);
 console.log('Sum = ', result);
 
@@ -80,15 +78,15 @@ for (i = 0; i < days.length; i++) {
 
 
 
-
 console.log(' '); 
 console.log('Задание 6');
 
 let nums = [58, false, 'flower', 3, 0];
 console.log(nums);
-
-nums[nums.length] = 'Как хорошо'; 
-console.log(nums);
+nums.push('Как хорошо');
+if (i = nums.length - 1) {
+    console.log(nums[i]);
+}
 
 
 
@@ -100,12 +98,26 @@ let arr7 = [];
 while(true) {
     let num = prompt('Введите число');
     if (num != '') {
-        arr7.push(+num);
+        if ((num >= 0) || (num < 0)) {
+            arr7.push(num);
+        } else {
+            alert('Это не число');
+        }    
     } else {
         break;
-    }    
+    }
 }
 console.log(arr7);
+let a = arr7[i],
+    b = arr7[i+1];
+
+for (i = 0; i < arr7.length; i++) {
+    arr7.sort(function(a, b) {
+    return a - b;
+});
+} 
+console.log(arr7);
+
 
 
 
@@ -122,13 +134,12 @@ console.log(arr8.reverse());
 
 arr8 = [12, false, 'Текст', 4, 2, -5, 0];
 
-let arr81 = [],
-    j = 0;
+let arr81 = [];
 
 i = arr8.length - 1;
+
 while (i >= 0) {
-    arr81[j] = arr8[i];
-    j++;
+    arr81.push(arr8[i]); 
     i--;
 }
 console.log(arr81);
@@ -171,6 +182,8 @@ console.log('Sum = ', sum);
 
 
 
+
+
 console.log(' '); 
 console.log('Задание 11');
 
@@ -183,4 +196,34 @@ for (let j = 1; j <= h; j++) {
     arr11[j] = (2 * (j + 1) - 1);
     n = arr11[j];
     document.write('<center>' + new Array(n-1).join('^') + '<\/center>');
-} 
+}
+
+
+
+let arr22 = [];
+h = prompt('Введите высоту равнобедренного треугольника');
+
+for (let i = 1; i <= h; i++) {
+
+     console.log(new Array(+h - i + 1).join(' ') + " " + new Array(2*i).join('^'));
+      
+}
+
+
+let sum1,
+    sum2;
+h = prompt('Введите высоту равнобедренного треугольника');
+
+for (let i = 1; i <= h; i++) {
+    sum1 = 0;
+    sum2 = 0;
+   
+    for (let j = 1; j <= +h  - i + 1; j++) {
+        sum1++;
+    }
+    for (let k = 1; k <= 2*i; k++) {
+        sum2++;
+    }
+console.log(new Array(sum1).join(' ') + new Array(sum2).join('^'));
+}    
+ 

@@ -142,11 +142,11 @@ let n = 1000,
 i = 0;
 
 while (n >= 50) {
-    n /= 10;
+    n /= 2;
     i++
 }
 num = i;
-console.log('Num = ', num);
+console.log('Число = ' + n + ' Num = ' + num);
 
 
 
@@ -185,8 +185,8 @@ console.log('Аverange = ', averange);
 
 console.log(' ');
 console.log('Задание 9');
-
-str = '4 98 4 6 4 32 4 65 4 3 5 7 89 7 10 1 36 8 57';
+/*
+str = '4 98 4 6 4 32 4 65 4 3 5 100 89 7 10 1 36 8 57';
 i = 0;
 
 let strArr = str.split(' '),
@@ -208,18 +208,30 @@ console.log('Min = ', min);
 i = strArr.length - 1;
 max = strArr[i];
 console.log('Max = ', max);
-/*
-// С помощью цикла
-for (i = 0; i < strArr.length; i++) {
-    if (a < b) {
-        min = a;
-    } else {
-        max = b;
+
+*/
+
+// с помощью цикла
+str = '4 98 4 6 4 32 4 65 4 3 5 99 89 7 10 1 36 8 57';
+
+let arr = str.split(' ');
+console.log(arr);
+
+let max = arr[0],
+    min = arr[0];
+
+for (i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+        max = arr[i];
+    } 
+    if (arr[i] < min) {
+        min = arr[i];
     }
 }
-console.log(min);
-console.log(max);
-*/
+
+console.log('Max = ', max);
+console.log('Min = ', min);
+
 
 
 
@@ -227,16 +239,26 @@ console.log(' ');
 console.log('Задание 10');
 
 n = prompt('Введите целое число');
-let arr = [], 
-    c = 0;
+let nArr = [],
+    nArr1 = []; 
+    sum = 0;
+    col = 0;
 console.log(n);
 i = 0;
-arr = n.split();
-console.log(arr[i] + ' ');
-for (i = 0; i < arr.length; i++) {
-    c += arr[i];
+nArr = n.split('');
+for (i = 0; i < nArr.length; i++) {
+    console.log(nArr[i] + ' ');
+    col++;
+    sum += +nArr[i]; 
 }
-console.log(c + '  ');
 
+j = nArr.length - 1;
 
+while (j >= 0) {
+    nArr1.push(nArr[j]);
+    j--;
+}
+console.log('Count = ' , col);
+console.log('Sum = ', sum);
+console.log(nArr1);
 
