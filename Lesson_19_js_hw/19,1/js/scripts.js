@@ -97,19 +97,37 @@ console.log('Задание 3');
 b) имя эл.почты (до знака @) должно быть длиной более 2 символов, причем имя может содержать только буквы, цифры, но не быть первыми и единственными в имени, и точку;
 с) после последней точки и после @, домен верхнего уровня (ru, by, com и т.п.) не может быть длиной менее 2 и более 11 символов. */
 /*
-function checkEmail (email) {
-    let str = email;
-    for (let i = 0; i < str.length; i++) {
-      if 
-      (((str[i] > '\u0041') && (str[i] < '\u005A')) || ((str[i] > '\u0061') && (str[i] < '\u007A')) || ((str[i] > '\u0030') && (str[i] < '\u0039'))) {
-        console.log(str);
-      }  else {
-          alert ('Вы неправильно ввели адрес электронной почты');
-      }  
-    } 
+function checkEmail(email) {
+    let str = email.split('');
+    console.log(str);
+    if ((str.indexOf('@') == str.lastIndexOf('@')) && (str.indexOf('@') > 2) && (str.indexOf('@') != str.length-1)) {
+     
+        for (let i = 0; i < str.length; i++) {
+                            
+            if 
+            (((str[i] > '\u0041') && (str[i] < '\u005A')) || 
+            ((str[i] > '\u0061') && (str[i] < '\u007A')) || 
+            ((str[i] > '\u0030') && (str[i] < '\u0039')) || 
+            (str[i] = '\u0040') || 
+            (str[i] = '\u002E') || 
+            (str[i] = '\u002D') || 
+            (str[i] = '\u005F') ||
+            (str[i] = '\u00AF'))  {
+                
+                return true;
+            } else {
+                break;
+            }            
+        }
+
+    } else {
+        return false;
+    }
+       
+    if  ((str[0] != '\u0040') || (str[0] != '\u002E') || (str[0] != '\u002D') || (str[0] != '\u005F') || (str[0] != '\u00AF')) { 
+        return true;
     
+        
 }
-
-checkEmail (prompt('Введите адрес электронной почты'));
-
+console.log(checkEmail(prompt('Введите ваш электронный адрес')));
 */
